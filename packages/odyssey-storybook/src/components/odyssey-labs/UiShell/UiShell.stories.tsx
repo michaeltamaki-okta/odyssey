@@ -221,6 +221,19 @@ export const TopNavOnly: StoryObj<UiShellProps> = {
   },
 };
 
+export const NavRailOnly: StoryObj<UiShellProps> = {
+  args: {
+    subscribeToPropChanges: (subscriber) => {
+      subscriber({
+        topNavProps: {},
+        navRailProps: sharedNavRailProps,
+      });
+
+      return () => {};
+    },
+  },
+};
+
 export const LoadingData: StoryObj<UiShellProps> = {
   args: {
     optionalComponents: sharedOptionalComponents,
